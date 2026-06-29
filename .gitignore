@@ -1,0 +1,37 @@
+# --- Datos personales / generados (no versionar) ---
+# Hojas de vida (datos sensibles)
+hojas-de-vida/*
+!hojas-de-vida/README.md
+
+# Resultados de búsquedas (vacantes, reportes, texto extraído)
+resultados/*
+!resultados/README.md
+
+# Cartas de presentación generadas
+cartas-presentacion/*
+!cartas-presentacion/README.md
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# --- Playwright / navegador ---
+.playwright-mcp/
+
+# --- Entorno / secretos ---
+.env
+.env.*
+!.env.example
+
+# --- Sistema operativo ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Editores ---
+.vscode/
+.idea/
+*.swp
