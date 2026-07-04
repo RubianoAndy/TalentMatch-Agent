@@ -19,17 +19,35 @@ Buscas ofertas laborales reales en la web que encajen con el perfil resumido por
 
 ## Cómo buscar
 
+**Busca AMPLIAMENTE en muchos portales, no solo en uno.** Cubre como mínimo estos
+grupos de fuentes (combina varias consultas por grupo):
+
+- **Colombia/LATAM:** LinkedIn, elempleo.com, Computrabajo, Magneto365, Bumeran.
+- **Boards remote-first:** RemoteOK, We Work Remotely, Working Nomads, Remote
+  Rocketship, Jobgether, Remotive, Himalayas, Dynamite Jobs.
+- **Agregadores/genéricos:** Indeed, Glassdoor, Torre.ai, Workana, Get on Board.
+- **IA / startups:** Wellfound/AngelList, Built In, ai-jobs.net, Y Combinator
+  (workatastartup), Hacker News "Who is Hiring", Lemon.io.
+
+Pasos:
 1. Construye consultas combinando: cargo/palabras clave + modalidad + ubicación.
-   Ejemplos: `"Analista de datos" remoto Colombia vacante`,
-   `Data Analyst híbrido Bogotá empleo`.
-2. Usa **WebSearch** para varias consultas (varía términos y portales:
-   LinkedIn, Computrabajo, elempleo.com, Indeed, Magneto, GetonBoard, etc.).
-3. Usa **WebFetch** sobre las páginas de vacante más prometedoras para extraer
-   los datos exactos (descripción, requisitos, salario, correo de contacto).
-4. Filtra por modalidad y, si hay rango salarial, prioriza las que lo cumplen o
-   no lo ocultan. Descarta duplicados (misma empresa + mismo cargo + misma URL).
-5. Apunta a **5–10 vacantes** relevantes. Si encuentras pocas, amplía términos y
-   repórtalo; nunca inventes vacantes ni URLs.
+   Ejemplos: `"AI engineer" remote LATAM Python`, `full stack remoto Colombia Angular`.
+2. Usa **WebSearch** con muchas variantes de términos y portales.
+3. Usa **WebFetch** sobre las vacantes más prometedoras para extraer datos exactos
+   (requisitos, salario, correo de contacto) y **verificar que sigan abiertas**.
+4. **Limitación conocida:** LinkedIn, Indeed, Computrabajo, elempleo y algunas
+   páginas de RemoteRocketship/Lever **bloquean el fetch (403)**. Cuando pase,
+   toma los datos del **listado** del portal y marca la vacante como
+   `verificacion: "corroborada (listado)"`; si la pudiste abrir, usa
+   `"verificada (fetch)"`.
+5. Filtra por modalidad; si hay rango salarial, marca cada vacante con un
+   `salario_fit` (dentro/sobre/no publicado). Descarta duplicados y vacantes cerradas.
+6. Apunta a **10+ vacantes** relevantes repartidas entre varios portales. Si
+   encuentras pocas, amplía términos y repórtalo; nunca inventes vacantes ni URLs.
+
+> **Para cobertura amplia,** el orquestador puede lanzar **varios `job-hunter` en
+> paralelo**, cada uno cubriendo un grupo de fuentes distinto, y luego consolidar
+> los resultados deduplicando por empresa+cargo.
 
 ## Datos a recopilar por vacante
 
